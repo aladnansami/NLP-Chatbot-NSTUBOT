@@ -1,0 +1,57 @@
+/* =================== UNIVERSAL =================== */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul{
+  list-style-type: none;
+}
+
+/* =================== HEADER =================== */
+.header-box{
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+.header-box>a{
+  position: absolute;
+  left: 0px;
+}
+.header-box>div.header-title{
+  position: absolute;
+  left: 100px;
+}
+.header-box>div.header-contact{
+  position: absolute;
+  right: 0;
+}
+.header-box>div>h3{
+  margin: 2px 0;
+}
+
+/* =================== NAVIGATION =================== */
+.navbar-nav{
+  margin-left: 100px;
+}
+.navbar-nav>li>a:hover{
+  color: gray!important;
+}
+.hover-list{
+  list-style-type: none;
+  position: absolute;
+  z-index: 100;
+  background: white;
+  top: 45px;
+  left: 180px;
+  padding: 10px;
+  display: none;
+  transition: 1s;
+}
+.hover-list>li>a{
+  text-decoration: none;
+  color: black;
+}
+.hover-list-parent:hover>.hover-list{
+  display: block;
+}

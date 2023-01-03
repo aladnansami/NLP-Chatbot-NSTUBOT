@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!--Fontawesome CSS-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!--Custom CSS-->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='common.css') }}">
+  
+  <title>Registration</title>
+</head>
+<body>
+
+  <!-- =================== HEADER =================== -->
+  <header class="container my-3">
+    <div class="header-box">
+      <a href=""><img src="{{ url_for('static',filename='images/nstu_logo.png') }}" width="70" alt=""></a>
+      <div class="header-title">
+        <h3>নোয়াখালী বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়</h3>
+        <h3>Noakhali Science and Technology University</h3>
+        <small>নোয়াখালী ৩৮১৪, বাংলাদেশ।</small>
+      </div>
+      <div class="header-contact">
+        <i class="fa fa-phone"></i>
+        <b>Phone: 02334496522</b>
+        </br>
+        <i class="fa fa-envelope"></i>
+        <b> registrar@office.nstu.edu.bd</b>
+        </br>
+        <i class="fa fa-fax"></i>
+        <b>Fax: 02334496523</b>
+      </div>
+    </div>
+  </header>
+        
+  <!-- =================== NAVIGATION BAR =================== -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link text-white" href="">Home</a>
+        </li>
+        <li class="nav-item hover-list-parent">
+          <a class="nav-link text-white" href="#">Academic</a>
+          <ul class="hover-list">
+            <li><a href="https://nstu.edu.bd/institutes.html">Institutes</a></li>
+            <li><a href="https://nstu.edu.bd/faculties.html">Faculties</a></li>
+            <li><a href="https://nstu.edu.bd/academic_calender.html">Academic Calender</a></li>
+            <li><a href="https://nstu.edu.bd/academic_programs.html">Academic Prgrams</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="https://www.admission.nstu.edu.bd/">GST Admission</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-white">Subject Comparision</a>
+        </li> 
+      </ul>
+    </div>
+
+    <!-- =================== DISPLAYING LOGOUT LINK DEPEND ON USER LOGGED IN OR NOT =================== -->
+    {% with m=session.get("user_id")  %}
+      {% if m!=None %}
+        <a href="./logout" class="nav-link text-white">Log Out</a>
+      {% endif %}
+    {% endwith %}
+  </nav>
+
+  <div class="container">
+    <div class="row my-3">
+      <!-- =================== USER REGISTRATION IMAGE =================== -->
+      <div class="col-7">
+        <img src="{{ url_for('static',filename='images/./registration.jpg') }}" width="500" alt="">
+      </div>
+      <!-- =================== USER REGISTRATION FORM =================== -->
+      <div class="col-5">
+        <form  method="post" action="/register_validation" class="border rounded px-3 pt-3">
+          <div class="form-group">
+            <label for="fname"><i class="fa fa-user"></i> First Name</label>
+            <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter First Name">
+          </div>
+          <div class="form-group">
+            <label for="lname"><i class="fa fa-user"></i> Last Name</label>
+            <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Last Name">
+          </div>
+          <div class="form-group">
+            <label for="email"> <i class="fa fa-envelope"></i> Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="pwd"><i class="fa fa-unlock-alt"></i> Password</label>
+            <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter a Strong Password">
+            <small class="form-text text-muted">Strong password always perform better for security issue</small>
+          </div>
+          <div class="form-group">
+            <input type="submit" class="btn btn-outline-info btn-block" value="Submit">
+          </div>
+          <p>Already Have an Account ? <a href="./login">Log In</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== FOOTER =================== -->
+  <footer>
+    <p class="text-center bg-dark text-white m-0">All &copy copy right reserved | <a href="" class="text-white">Noakhali Science & Technology University</a></p>
+  </footer>
+  
+  <!-- =================== BOOTSTRAP JAVASCRIPT =================== -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+</body>
+</html>
