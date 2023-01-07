@@ -13,3 +13,11 @@ chatbot using Flask, NLTK, Keras, Python, etc.
 5.Predict the outcomes<br>
 6.Deploy the model in the Flask app<br>
 
+# How to use 
+1. clone git repo <br>
+2. Import required python packages <br>
+3. connect mysql database <br>
+4. connect mongodb database <br>
+5. First run traning.py <br>
+6. Than app.py <br>
+here data.json is data file
