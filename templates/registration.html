@@ -11,17 +11,27 @@
   <!--Fontawesome CSS-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
+  <!--MUI CSS-->
+  <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css" />
+
   <!--Custom CSS-->
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='common.css') }}">
-  
+  <style>
+    div.col-9{
+      margin: 20px auto;
+      
+    }
+
+  </style>
   <title>Registration</title>
 </head>
 <body>
 
+
   <!-- =================== HEADER =================== -->
-  <header class="container my-3">
+  <header class=" my-3">
     <div class="header-box">
-      <a href=""><img src="{{ url_for('static',filename='images/nstu_logo.png') }}" width="70" alt=""></a>
+      <a href=""><img src="{{ url_for('static',filename='./images/nstu_logo.png') }}" alt=""></a>
       <div class="header-title">
         <h3>নোয়াখালী বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়</h3>
         <h3>Noakhali Science and Technology University</h3>
@@ -39,7 +49,7 @@
       </div>
     </div>
   </header>
-        
+
   <!-- =================== NAVIGATION BAR =================== -->
   <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,27 +73,28 @@
           <a class="nav-link text-white" href="https://www.admission.nstu.edu.bd/">GST Admission</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link text-white">Subject Comparision</a>
+          <a href="#exampleModal" data-toggle="modal"  class="nav-link text-white">Subject Comparision</a>
         </li> 
       </ul>
     </div>
 
-    <!-- =================== DISPLAYING LOGOUT LINK DEPEND ON USER LOGGED IN OR NOT =================== -->
+    <!-- =================== DISPLAYING LOGOUT LINK BASED ON USER LOGGED IN OR NOT =================== -->
     {% with m=session.get("user_id")  %}
       {% if m!=None %}
         <a href="./logout" class="nav-link text-white">Log Out</a>
       {% endif %}
     {% endwith %}
+
   </nav>
 
   <div class="container">
     <div class="row my-3">
       <!-- =================== USER REGISTRATION IMAGE =================== -->
-      <div class="col-7">
+      <div class="d-none col-12 d-lg-block col-lg-7">
         <img src="{{ url_for('static',filename='images/./registration.jpg') }}" width="500" alt="">
       </div>
       <!-- =================== USER REGISTRATION FORM =================== -->
-      <div class="col-5">
+      <div class="col-12 col-sm-9 mx-sm-auto mx-0 col-lg-5">
         <form  method="post" action="/register_validation" class="border rounded px-3 pt-3">
           <div class="form-group">
             <label for="fname"><i class="fa fa-user"></i> First Name</label>

@@ -41,8 +41,6 @@ footer>p{
   margin-top: 10px;
 }
 
-
-
 /* =================== HOME - TITLE & IMAGE BOX =================== */
 .img-container{
   position: relative;
@@ -60,12 +58,8 @@ footer>p{
 }
 .img-container>.text-box{
   position: absolute;
-  left: 5%;
-  top: 5%;
-  text-align: center;
-  transform: translate(50%, 50%);
-  opacity: 1;
-  z-index: 500;
+  width: 100%;
+  top: 25%;
 }
 .text-box>h1{
   font-size: 60px;
@@ -74,8 +68,8 @@ footer>p{
 }
 .img-container>.icon-box{
   position: absolute;
+  width: 100%;
   bottom: 0;
-  left: 13%;
 }
 .fa-4x{
   color: red;
@@ -83,8 +77,26 @@ footer>p{
 .bg-black{
   background-color: rgba(0, 0, 0, 0.8);
 }
+@media screen and (max-width: 700px) {
+  .w-75{
+    width: 100%!important;
+  }
+}
+@media screen and (max-width:745px) {
+  .text-box>h1{
+    font-size: 40px;
+  }
+}
 
-
+/* =================== ABOUT PAGE =================== */
+.embed-responsive{
+  height: 100%;
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .vc-image{
+    margin-left: -20px;
+  }
+}
 /* =================== IMAGE SLIDER =================== */
 img {
   vertical-align: middle;
@@ -243,7 +255,7 @@ summary:hover {
 }
 .boxed {
   margin-left: 65%;
-  width: 35%;
+  width: 400px;
   height: 470px;
   background: linear-gradient(to right, #c9d6ff, #e2e2e2);
   border-radius: 1rem;
@@ -283,7 +295,7 @@ summary:hover {
 /* =================== COMPARE COURSES =================== */
 #compare{
   margin-top: -9px;
-  margin-left: 70%;
+  margin-left: 280px;
   border-bottom-left-radius: 110px;
   border-bottom-right-radius: 110px;
   font-size: 0.7rem;
@@ -300,10 +312,7 @@ summary:hover {
   padding: 2px;
 }
 .close-icon{
-  font-size: 20px;
-  position: relative;
-  top: 2px;
-  right: -40px;
+  margin-left: 25px;
 }
 .box select{
     background-color: #0563af;

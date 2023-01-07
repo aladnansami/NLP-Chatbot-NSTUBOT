@@ -18,16 +18,14 @@
   <link rel="stylesheet" href="{{ url_for('static',filename='./common.css') }}">
   <link rel="stylesheet" href="{{ url_for('static',filename='./index.css') }}">
 
-  
-
   <title>Noakhali Science and Technology University</title>
 </head>
 <body>
 
   <!-- =================== HEADER =================== -->
-  <header class="container my-3">
+  <header class=" my-3">
     <div class="header-box">
-      <a href=""><img src="{{ url_for('static',filename='./images/nstu_logo.png') }}" width="70" alt=""></a>
+      <a href=""><img src="{{ url_for('static',filename='./images/nstu_logo.png') }}" alt=""></a>
       <div class="header-title">
         <h3>নোয়াখালী বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়</h3>
         <h3>Noakhali Science and Technology University</h3>
@@ -138,12 +136,12 @@
   <div class="img-container">
     <img src="{{ url_for('static',filename='./images/home.jpg') }}" alt="">
     <div class="text-box">
-      <h1 class="text-uppercase" >Follow Your Dreams</h1>
-      <h1>@ NSTU</h1>
+      <h1 class="text-uppercase d-flex justify-content-center" >Follow Your Dreams</h1>
+      <h1 class="d-flex justify-content-center">@ NSTU</h1>
     </div>
     <!-- =================== HOME - ICON BOX =================== -->
-    <div class="container icon-box">
-      <div class="row">
+    <div class="container-fluid-sm d-flex justify-content-center icon-box">
+      <div class="row w-75">
         <div class="col-3 border bg-black text-center rounded py-3">
           <i class=" fas fa-university fa-4x"></i>
           <h1 class="text-white">500+</h1>
@@ -151,7 +149,7 @@
         </div>
         <div class="col-3 border bg-black text-center rounded py-3">
           <i class=" fa fa-user fa-4x"></i>
-          <h1 class="text-white">6000+</h1>
+          <h1 class="text-white">500+</h1>
           <h4 class="m-0 text-white">Student</h4>
         </div>
         <div class="col-3 border bg-black text-center rounded py-3">
@@ -161,7 +159,7 @@
         </div>
         <div class="col-3 border bg-black text-center rounded py-3">
           <i class=" fa fa-book fa-4x"></i>
-          <h1 class="text-white">30</h1>
+          <h1 class="text-white">500+</h1>
           <h4 class="m-0 text-white">Departments</h4>
         </div>
       </div>
@@ -169,97 +167,98 @@
   </div>
 
   <!-- =================== ABOUT SECTION =================== -->
-  <div class="container-fluid my-5">
+  <div class="container-fluid-sm my-5 about">
     <div class="row" style="width: 90%;margin: auto;">
-      <div class="col-7">
+      <div class="col-md-12 col-xl-7">
         <div class="row">
-          <div class="col-6">
+          <div class="col-12 col-md-6">
             <h2 class="text-uppercase">About NSTU</h2>
-            <p class="text-justify text-secondary">
-              The creation of a band of skilled manpower equipped with latest knowledge of science and technology is a must to achieve a prestigious position in this modern world. As a part of ensuring quality education, with immense expectations of the southern coastal inhabitants of Bangladesh, a new university named NSTU... </p>
-            <a href="https://nstu.edu.bd/about_nstu.html"  class="btn btn-dark">Read More</a>
+            <p class="text-justify text-secondary">Indian Institute of Technology Delhi is one of the Twenty Three IITs created to be Centres of Excellence for training, research and development in science, engineering and technology in India. Established as College of Engineering in 1961, the Institute was later declared as an Institution of...</p>
+            <button type="button" class="btn btn-dark">Reade More</button>
           </div>
-          <div class="col-6">
-            <iframe width="370" height="200" src="https://www.youtube.com/embed/pk-o2neqgrc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="col-12 col-md-6 video-container">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item mt-3 mt-md-0 video"  src="https://www.youtube.com/embed/pk-o2neqgrc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-5">
+      <div class="col-md-12 col-xl-5">
         <div class="row">
-          <div class="col-5">
-            <img src="https://nstu.edu.bd/assets/images/administration/vice_chancellor.jpg" height="200" alt="">
+          <div class="col-12 col-sm-5 vc-img-container text-center">
+            <img src="https://nstu.edu.bd/assets/images/administration/vice_chancellor.jpg" class="vc-image" >
           </div>
-          <div class="col-7">
+          <div class="col-12 col-sm-7 vc-text-container">
             <h2 class="text-uppercase">VC's Corner</h2>
             <b><small>Prof. Dr. Md. Didar-Ul-Alam</small></b>
-            <p class="text-justify text-secondary">It's a great pleasure to me to welcome you to Noakhali Science and Technology University(NSTU).This is the 27th public university which was established on 15th July 2001, and the academic activities start ... </p>
-            <a href="https://nstu.edu.bd/vice_chancellor.html" class="btn btn-dark">Read More</a>
+            <p class="text-justify text-secondary">Prof. Rangan Banerjee has taken over the charge as Director, Indian Institute of Technology Delhi (IIT Delhi) with effect from the forenoon of 15th February, 2022 Lorem ipsum dolor sit amet.</p>
+            <button type="button" class="btn btn-dark">Reade More</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="container-fluid my-5">
+  <div class="container-fluid-sm my-5">
     <div class="row" style="width: 90%;margin: auto;">
      <!-- =================== FREQUENTLY ASKED QUESTIONS =================== -->
-      <div class="col-5">
+      <div class="col-12 col-md-5">
         <h2 class="d-inline">FAQ<small>s</small> <i class="fa fa-question-circle"></i></h2>
         <button class="view_all" type="button">View All</button>
         <small class="text-secondary d-block mt-1">FREQUENTLY ASKED QUESTIONS</small>
         <div class="accordion-container">
           <details>
             <summary>
-              When will the class start for 2021-22 session ?
+              How do you create an accordion?
             </summary>
             <div>
-              It will start on 22 January, 2023
+              Answer
             </div>
           </details>
           <details >
             <summary>
-              How many institute & department at NSTU ?
+              How do you create an accordion?
             </summary>
             <div>
-              There are 2 institute and 28 department at NSTU
+              Answer
             </div>
           </details>
           <details>
             <summary>
-              When will the 8th merit list admission start ?
+              How do you create an accordion?
             </summary>
             <div>
-              It will be start soon, check NSTU official website
+              Answer
             </div>
           </details>
           <details>
             <summary>
-              Do I have to be physically present in campus on the day of registraton ?
+              How do you create an accordion?
             </summary>
             <div>
-              Yes, of course, you have to present physically with required document
+              Answer
             </div>
           </details>
           <details>
             <summary>
-              Wether On-Campus hostel mess facility will be available for students staying outside ?
+              How do you create an accordion?
             </summary>
             <div>
-              No provision for On-Campus hostel mess. Other food outlets in the campus are available
+              Answer
             </div>
           </details>
           <details>
             <summary>
-              Where should I contact for any need ?
+              How do you create an accordion?
             </summary>
             <div>
-              You should contact at Register Office if you face any major problem
+              Answer
             </div>
           </details>
         </div> 
       </div>
       <!-- =================== IMAGE SLIDER =================== -->
-      <div class="col-7">
+      <div class="col-12 col-md-7">
         <h2>Photo Gallery <i class="fa-solid fa-image ml-1"></i></h2>
         <div class="container">
           <div class="mySlides">
@@ -327,13 +326,13 @@
 
         <div id="chatbox">
           <p class="botText d-inline">
-              <span style="font-size:0.8rem"><i class="fas fa-robot"></i>&nbsp;I'm SAMI for your help!</span>
+              <span style="font-size:0.8rem"><i class="fas fa-robot"></i>&nbsp;I'm Flasky for your help!</span>
           </p>
           <!-- =================== DISPLAYING LOGIN REGISTRATION LINK BASED ON USER LOGGED IN OR NOT =================== -->
           {% with m=session.get("user_id")  %}
             {% if m==None %}
-              <a href="./register" class="btn btn-secondary">Registration</a>
-              <a href="./login" class="btn btn-secondary">Log In</a>
+              <a href="./register" class="mt-3 btn btn-secondary">Registration</a>
+              <a href="./login" class="mt-3 btn btn-secondary">Log In</a>
             {% endif %}
           {% endwith %}
         </div>
@@ -403,7 +402,7 @@
     <div class="bg-dark py-3">
       <div class="container">
         <div class="row">
-          <div class="col-3">
+          <div class="col-6 col-md-3">
             <h4 class="foot-title">Useful Link</h4>
             <ul>
               <li><a href="http://www.ugc.gov.bd/en" class="text-white">UGC</a></li>
@@ -412,7 +411,7 @@
               <li><a href="http://www.pmo.gov.bd/" class="text-white">Office of Prime Minister</a></li>
             </ul>
           </div>
-          <div class="col-3">
+          <div class="col-6 col-md-3">
             <h4 class="foot-title">Faculties</h4>
             <ul>
               <li><a href="https://nstu.edu.bd/faculties.html" class="text-white">Faculty of Engineering</a></li>
@@ -423,14 +422,14 @@
               <li><a href="https://nstu.edu.bd/faculties.html" class="text-white">Faculty of Education Sciences</a></li>
             </ul>
           </div>
-          <div class="col-3">
+          <div class="col-6 col-md-3">
             <h4 class="foot-title">Institutes</h4>
             <ul>
               <li><a href="https://nstu.edu.bd/institutes.html" class="text-white">Institute of Information Sciences (IIS)</a></li>
               <li><a href="https://nstu.edu.bd/institutes.html" class="text-white">Institute of Information Technology (IIT)</a></li>
             </ul>
           </div>
-          <div class="col-3">
+          <div class="col-6 col-md-3">
             <h4 class="foot-title">Centers</h4>
             <ul>
               <li><a href="https://nstu.edu.bd/cyber_center.html" class="text-white">Cyber Center</a></li>
