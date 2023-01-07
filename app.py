@@ -1,15 +1,13 @@
-# import packages
+# import all required packages
 
 from flask import Flask, render_template, request, redirect, session, flash,request
-#import flaskybot_train
 import mysql.connector
 import os
 import pymongo
 import datetime
-#import speech_recognition as sr
+import speech_recognition as sr
 import pyttsx3
 import nltk
-
 nltk.download('popular')
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
@@ -25,7 +23,7 @@ words = pickle.load(open('texts.pkl','rb'))
 classes = pickle.load(open('labels.pkl','rb'))
 
 def clean_up_sentence(sentence):
-    # tokenize the pattern - split words into array
+    # tokenize for the pattern - split words into array
     sentence_words = nltk.word_tokenize(sentence)
     # stem each word - create short form for word
     sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
@@ -113,22 +111,23 @@ def home():
 
 @app.route("/get")
 def get_bot_response():
+
     userText = request.args.get('msg')
     return chatbot_response(userText)
     # client = pymongo.MongoClient(
-    #     #"mongodb+srv://demo:demo@cluster0.kll4c.mongodb.net/chat_bot?retryWrites=true&w=majority"
-    #     "mongodb+srv://masum1834e:masum1834e@cluster0.avsxlxx.mongodb.net/?retryWrites=true&w=majority"
+    # "mongodb + srv: // aladnansami:!87654321Aa@cluster0.d81fvmf.mongodb.net /?retryWrites = true & w = majority"
     # )
-
+    #
     # myDb = client['chat_bot']
     # myDbCol = myDb["qus_ans_data"]
     # userText = request.args.get('msg')
     # myDict = {
     #     "user_data": userText,
-    #     #"bot_data": str(flaskybot_train.chat_response(userText)),
+    #     "bot_data": str(chatbot_response(userText)),
     #     "date": datetime.datetime.now()
     # }
     # x = myDbCol.insert_one(myDict)
+
 
     # reply with voice
     #botResponse = flaskybot_train.chat_response(userText)
@@ -155,7 +154,7 @@ def get_bot_response():
 #             try:
 #                 userText = request.args.get('msg')
 #                 text = r.recognize_google(audio)
-#                 if text in str(flaskybot_train.chat_response(userText)):
+#                 if text in str(chatbot_response(userText)):
 #                     reply = userText
 #                     rate = engine.getProperty("rate")
 #                     engine.setProperty("rate", 100)

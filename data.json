@@ -69,9 +69,25 @@
          "responses": ["Loading hospital details"],
          "context": [""]
         },
-   {"tag": "Last_serial",
-         "patterns": ["Iftir huga ke marche"],
-         "responses": ["Shuvro "],
+     {"tag": "OTP related problem",
+         "patterns": ["I didn't receive the OTP", "OTP ASCHENA AMAR NUMBER A","Otp ase na keno","I didn't find otp","Didn't receive any otp for log in in my phone","Opt pacchi na","mobile verification code asteche na","I cannot collect my OTP.The SMS doesnot come","OTP ase nai phone.","Amake boltece OTP patano hoyece kintu aseni","OTP code","Verify code ashe ni","OTP not sent","i cannot get my otp..","Otp problem.","Amr phone ew OTP ASCI nh","Amr number ew kono verify code Ase nai","Phone number a OTP ashteche na","OTP Code not Found","otp"],
+         "responses": ["Please try again Or call GST helpline"],
+         "context": [""]
+        }
+,
+     {"tag": "NSTU Library",
+         "patterns": ["Where is the library building?","Library building ta kthay?","Library building ta khuje pacchi na","NSTU Library building","Provide me the library building location","where is NSTU Library","Location of Library building, please"],
+         "responses": ["Here is the location of Library buildiing: https://goo.gl/maps/8joc4yy4GW2bxMdbA"],
+         "context": [""]
+        },
+     {"tag": "NSTU Medical center",
+         "patterns": ["Is there any medical center at NSTU?","Is there any medical centre at NSTU?","where is the medical center?","where is the medical centre?","Medical center er location ta kothay?","Medical centre er location ta kothay?","NSTU te ki kono medical center ache?","NSTU te ki kono medical centre ache?","is there any hospital in NSTU?","medical centre koi?"],
+         "responses": ["Here you can find the NSTU Medical center at this location: https://goo.gl/maps/w28nuzkz1gmpZXYWA"],
+         "context": [""]
+        },
+     {"tag": "NSTU Medical center facilities",
+         "patterns": ["tell me about some facilities provided by medical center","tell me about some facilities provided by medical centre","ki ki subidha pawa jabe medical center e?","ki ki subidha pawa jabe medical centre e?","I am sick, help me","ami osustho"],
+         "responses": ["The medical center of Noakhali science and technology university (NSTU) offers free experienced general practitioner and emergency medical care services to all members (students, teachers, officers, staff, also family members of the teachers, officers, staff) of the university community. The center provides service usually 8.30 am to 5.00 pm in working days but provide emergency services 24 hours. All members of the university get medicine from the medical center at free of cost .The center also has an ambulance, for 24 hours service."],
          "context": [""]
         }
    ]
