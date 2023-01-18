@@ -5,12 +5,12 @@ var but_compare = document.getElementById("but_compare");
 const bscIT = () =>
 {
     return bscit = {
-    name: "Bachelor of Science in Information Technology",
+    name: "Bachelor of Science in Software Engineering",
     level : "Graduate",
-    duration : "3 years",
-    el : "10+2 with minimum 45% marks with maths major",
-    fees: 25000,
-    job : "Programmers, Software Developer, Quality Analyst,IT Specialists, Technology Engineer, Technical Consultant, and Graphic Designer"
+    duration : "4 years",
+    el : "",
+    fees: ,
+    job : ""
     };
 }
 
@@ -18,12 +18,12 @@ const bscIT = () =>
 const bscCs = () =>
 {
     return bsccs = {
-    name: "Bachelor of Science in Computer Science",
+    name: "Computer Science and Telecomunication Engineering",
     level : "Graduate",
-    duration : "3 years",
-    el : "12th in PCM with the minimum 45%- 60% marks",
-    fees: 30000,
-    job : "Programmers, Software enginner,DTP operator, tech support Professional Hardware enginner, network architect"
+    duration : "4 years",
+    el : "",
+    fees: ,
+    job : ""
 };
 }
 
@@ -31,12 +31,12 @@ const bscCs = () =>
 const ME = () =>
 {
     return Me = {
-    name: "Mechanical Engineering",
-    level : "Degree",
+    name: "Information comunication Engineering",
+    level : "Gradute",
     duration : "4 years",
-    el : "at least 60% marks in class 12 board exams. PCM in 12th compulsory",
-    fees :'4,00,000/- 10,00,000/-',
-    job : "Operation Engineer,Technical Project Manager ,Mechanical Design Engineer"
+    el : "",
+    fees :'',
+    job : ""
 };
 }
 
