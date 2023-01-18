@@ -29,7 +29,7 @@ function showSlides(n) {
 const message_bot_btn=document.getElementById("message-bot");
 message_bot_btn.addEventListener("click",()=>{
   const chat_box=document.getElementsByClassName("boxed")[0];
-  chat_box.style.right="10px";
+  chat_box.style.right="15px";
 })
 const close_chat_box_btn=document.getElementsByClassName('close-icon')[0];
 close_chat_box_btn.addEventListener("click",()=>{

@@ -19,76 +19,215 @@
          "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
          "context": [""]
         },
-        {"tag": "options",
-         "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered"],
-         "responses": ["I can guide you through Adverse drug reaction list, Blood pressure tracking, Hospitals and Pharmacies", "Offering support for Adverse drug reaction, Blood pressure, Hospitals and Pharmacies"],
-         "context": [""]
-        },
-        {"tag": "adverse_drug",
-         "patterns": ["How to check Adverse drug reaction?", "Open adverse drugs module", "Give me a list of drugs causing adverse behavior", "List all drugs suitable for patient with adverse reaction", "Which drugs dont have adverse reaction?" ],
-         "responses": ["Navigating to Adverse drug reaction module"],
-         "context": [""]
-        },
-        {"tag": "blood_pressure",
-         "patterns": ["Open blood pressure module", "Task related to blood pressure", "Blood pressure data entry", "I want to log blood pressure results", "Blood pressure data management" ],
-         "responses": ["Navigating to Blood Pressure module"],
-         "context": [""]
-        },
-        {"tag": "blood_pressure_search",
-         "patterns": ["I want to search for blood pressure result history", "Blood pressure for patient", "Load patient blood pressure result", "Show blood pressure results for patient", "Find blood pressure results by ID" ],
-         "responses": ["Please provide Patient ID", "Patient ID?"],
-         "context": ["search_blood_pressure_by_patient_id"]
-        },
-        {"tag": "search_blood_pressure_by_patient_id",
-         "patterns": [],
-         "responses": ["Loading Blood pressure result for Patient"],
-         "context": [""]
-        },
-        {"tag": "pharmacy_search",
-         "patterns": ["Find me a pharmacy", "Find pharmacy", "List of pharmacies nearby", "Locate pharmacy", "Search pharmacy" ],
-         "responses": ["Please provide pharmacy name"],
-         "context": ["search_pharmacy_by_name"]
-        },
-        {"tag": "search_pharmacy_by_name",
-         "patterns": [],
-         "responses": ["Loading pharmacy details"],
-         "context": [""]
-        },
-        {"tag": "hospital_search",
-         "patterns": ["Lookup for hospital", "Searching for hospital to transfer patient", "I want to search hospital data", "Hospital lookup for patient", "Looking up hospital details" ],
-         "responses": ["Please provide hospital name or location"],
-         "context": ["search_hospital_by_params"]
-        },
-        {"tag": "search_hospital_by_params",
-         "patterns": [],
-         "responses": ["Please provide hospital type"],
-         "context": ["search_hospital_by_type"]
-        },
-        {"tag": "search_hospital_by_type",
-         "patterns": [],
-         "responses": ["Loading hospital details"],
-         "context": [""]
-        },
      {"tag": "OTP related problem",
          "patterns": ["I didn't receive the OTP", "OTP ASCHENA AMAR NUMBER A","Otp ase na keno","I didn't find otp","Didn't receive any otp for log in in my phone","Opt pacchi na","mobile verification code asteche na","I cannot collect my OTP.The SMS doesnot come","OTP ase nai phone.","Amake boltece OTP patano hoyece kintu aseni","OTP code","Verify code ashe ni","OTP not sent","i cannot get my otp..","Otp problem.","Amr phone ew OTP ASCI nh","Amr number ew kono verify code Ase nai","Phone number a OTP ashteche na","OTP Code not Found","otp"],
          "responses": ["Please try again Or call GST helpline"],
          "context": [""]
         }
 ,
-     {"tag": "NSTU Library",
+     {"tag": "Library",
          "patterns": ["Where is the library building?","Library building ta kthay?","Library building ta khuje pacchi na","NSTU Library building","Provide me the library building location","where is NSTU Library","Location of Library building, please"],
          "responses": ["Here is the location of Library buildiing: https://goo.gl/maps/8joc4yy4GW2bxMdbA"],
          "context": [""]
         },
-     {"tag": "NSTU Medical center",
+     {"tag": "Medical center",
          "patterns": ["Is there any medical center at NSTU?","Is there any medical centre at NSTU?","where is the medical center?","where is the medical centre?","Medical center er location ta kothay?","Medical centre er location ta kothay?","NSTU te ki kono medical center ache?","NSTU te ki kono medical centre ache?","is there any hospital in NSTU?","medical centre koi?"],
          "responses": ["Here you can find the NSTU Medical center at this location: https://goo.gl/maps/w28nuzkz1gmpZXYWA"],
          "context": [""]
         },
-     {"tag": "NSTU Medical center facilities",
+     {"tag": "Medical center facilities",
          "patterns": ["tell me about some facilities provided by medical center","tell me about some facilities provided by medical centre","ki ki subidha pawa jabe medical center e?","ki ki subidha pawa jabe medical centre e?","I am sick, help me","ami osustho"],
          "responses": ["The medical center of Noakhali science and technology university (NSTU) offers free experienced general practitioner and emergency medical care services to all members (students, teachers, officers, staff, also family members of the teachers, officers, staff) of the university community. The center provides service usually 8.30 am to 5.00 pm in working days but provide emergency services 24 hours. All members of the university get medicine from the medical center at free of cost .The center also has an ambulance, for 24 hours service."],
          "context": [""]
+        },
+
+{"tag": "IIT_Lab_facilities",
+         "patterns": ["how many Labs in this department?", "Number of Labs", "ekhane koiti Lab ache?","Total lab Number", "Total Lab Sonkha"],
+         "responses": ["There are 2 Labs and 1 classroom"],
+         "context": [""]
+        },
+{"tag": "IIT_Teachers",
+         "patterns": ["How many teachers are here?", "Total Teachers number of IIT", "Teachers Facilities of IIT", "IIT te Teachers er sonkha koto?", "IIT te kotojon sir-mam achen?"],
+         "responses": ["Total 13 teachers are in IIT.See more in details: https://www.nstu.edu.bd/IIT.html"],
+         "context": [""]
+        },
+{"tag": "Director of IIT",
+         "patterns": ["what is the name of The Director of IIT?", "who is the director of IIT?", "IIT er Director er nam ki?"],
+         "responses": ["Dr. Mohammad Salim Hossain(Professor & Director)."],
+         "context": [""]
+        },
+{"tag": "IIT Contact",
+         "patterns": ["when IIT office get open and close?","IIT office kotokkhon porjonto on thake?", "IIT office koitar dike off kora hoi?","Open and Close time of IIT Office","which days are off-day in IIT office?"],
+         "responses": ["(Office Hour: 9:00 AM to 5:00 PM, Days: Sunday to Thursday, Closed weekend day: Friday and Saturday)"],
+         "context": [""]
+        },
+{"tag": "IIT_Location",
+         "patterns": ["Direction of IIT", "where is IIT Building?", "IIT ta kon Bhobon e ache?", "IIT er actual direction ta kondike?"],
+         "responses": ["IIT is located in 2nd Floor of Library Building."],
+         "context": [""]
+        },
+{"tag": "NSTU_MOSQUE",
+         "patterns": ["Where is the NSTU Central Mosque located?", "Please tell me the Location of Central Mosque of NSTU", "Nstu er central mosque ta kondike?", "Nstu er mosjid ta kon jaigai ache?"],
+         "responses": ["The central mosque of  NSTU is located on the way to the library building and front of the MEdical Center Nstu. See more details in map: https://vymaps.com/BD/Nstu-Central-Mosque-O8343189241/"],
+         "context": [""]
+        },
+{"tag": "NSTU_Temple",
+         "patterns": ["Where is the NSTU Central Temple located?", "Please tell me the Location of the Central Temple of NSTU", "Nstu er central temple ta kondike?", "Nstu er temple ta kon jaigai ache?"],
+         "responses": ["The central temple of  NSTU is located on the way to the Bibi Khadija Hall or Monoshoroni Uddyan. See more details in map:https://www.google.com/maps/place/NSTU+Central+Temple/@22.7946896,91.0980933,17z/data=!3m1!4b1!4m5!3m4!1s0x3754afd4593f5885:0x159d54d3b3a13a9e!8m2!3d22.7946958!4d91.1002815"],
+         "context": [""]
+        },
+{"tag": "NSTU_Hall",
+         "patterns": ["How many halls are in Nstu?","how many boys halls in nstu?","how many girls halls in nstu?","total halls number in NSTU","nstu te total koita hall ache?", "cheleder jonno koita hall ache nstu te?", "meyeder jonno koita hall ache nstu te?", "when a student get hall seat as a fresher?", "hall e seat kokhon pabo?", "Hall e seat pete koto din somoi lagbe?"],
+         "responses": ["NSTU have total 5 halls. Two boys hall, these are: 1.Basha Shahid Abdus Salam Hall, 2.Bir Muktijuddha Abdul Malek Ukil Hall. Three girls hall, these are: 1.Hazrat Bibi Khadiza Hall, 2.Jatir Pita Bangabandhu Sheikh Mujibur Rahman Hall, 3.Bangamata Sheikh Fazilatunnessa Mujib Hall","Applications for vacant seats will be accepted from the hall subject to availability of seats."],
+         "context": [""]
+        },
+{"tag": "Hall_Provost",
+         "patterns": ["hall provost name", "All hall Provost Name", " hall provost er namgulo ki?", "Hall provost der nam gulo jante chai"],
+         "responses": ["1.Basha Shahid Abdus Salam Hall(Dr. Md Anisuzzaman), 2. 2.Bir Muktijuddha Abdul Malek Ukil Hall(Dr. Mehede Hassan Rubel), 3.Hazrat Bibi Khadiza Hall(Dr. Md. Rafiqul Islam), 4.Jatir Pita Bangabandhu Sheikh Mujibur Rahman Hall(Md.Majnur Rahman), 5.Bangamata Sheikh Fazilatunnessa Mujib Hall(Dr. Mohammad. Mohinuzzaman)"],
+         "context": [""]
+        },
+{"tag": "Provost",
+         "patterns": ["Basha Shahid Abdus Salam Hall provost name","provost name of abdus salam hall", "salam hall provost name", "salam hall er provost er name ki?", "salam hall er provost k?", "what is the name of the provost of salam hall?", "salam hall er provost er nam ta jante chai", "ASH hall provost name"],
+         "responses": ["Dr. Md Anisuzzaman"],
+         "context": [""]
+        },
+{"tag": "Provost",
+         "patterns": ["Bir Muktijuddha Abdul Malek Ukil Hall provost name","provost name of malek ukil hall", "malek hall provost name", "malek hall er provost er name ki?", ",malek hall er provost k?", "what is the name of the provost of malek hall?", "malek hall er provost er nam ta jante chai", "MUH hall provost name"],
+         "responses": [""],
+         "context": [""]
+        },
+{"tag": "Provost",
+         "patterns": ["Hazrat Bibi Khadiza Hall provost name","provost name of khadiza hall", "Khadiza hall provost name", "khadiza hall er provost er name ki?", "Khadiza hall er provost k?", "what is the name of the provost of Khadiza hall?", "Khadiza hall er provost er nam ta jante chai", "BKH hall provost name"],
+         "responses": ["Dr. Md. Rafiqul Islam"],
+         "context": ["Dr. Mehede Hassan Rubel"]
+        },
+{"tag": "Provost",
+         "patterns": ["Jatir Pita Bangabandhu Sheikh Mujibur Rahman Hall provost name","provost name of Bangabandhu hall", "Bangabandhu hall provost name", "Bangabandhu hall er provost er name ki?", "Bangabandhu hall er provost k?", "what is the name of the provost of Bangabandhu hall?", "Bangabandhu hall er provost er nam ta jante chai","BBH hall provost name"],
+         "responses": ["Md.Majnur Rahman"],
+         "context": [""]
+        },
+{"tag": "Provost",
+         "patterns": ["Bangamata Sheikh Fazilatunnessa Mujib Hall provost name","provost name of Bangamata hall", "Bangamata hall provost name", "Bangamata hall er provost er name ki?", "Bangamata hall er provost k?", "what is the name of the provost of Bangamata hall?", "Bangamata hall er provost er nam ta jante chai", "BFH hall provost name"],
+         "responses": ["Dr. Mohammad. Mohinuzzaman"],
+         "context": [""]
+        },
+{"tag": "Academic_Buildings",
+         "patterns": ["how many academic buildings are in NSTU?", "Total academic buildings in NSTU", "Academic Buildings Number", "Nstu te total koita academic bhobon ache?", "total academic bhoboner sonkha koto?","academic buildings"],
+         "responses": ["There are 2 established Academic Buildings, namely Academic Building-1 and Academic Building-2, in this University. One academic building is now under construction, the most significant academic building in Bangladesh."],
+         "context": [""]
+        },
+
+{"tag": "Auditorium",
+         "patterns": ["what is the activities of Auditorium?","I want to know about the auditorium of nstu?", "auditorium niye jante chai"],
+         "responses": ["Auditorium all activities:1.Cultural Programs of different Institutes, departments. 2.Course day celebration programs of different departments. 3.National Day Celebration programs. 4.ICT Job and Other Job fair. 5.Programming Contest Programs."],
+         "context": [""]
+        },
+{"tag": "Auditorium",
+         "patterns": ["Auditorium name","what is the name of the auditorium,NSTU", "auditorium er name ki?","NSTU Auditorium Name"],
+         "responses": ["In NSTU there is a five storied auditorium named “Bir Muktijuddha Haji Mohammad Idris Auditorim"],
+         "context": [""]
+        },
+{"tag": "Administration",
+         "patterns": ["Who is the Chancellor of this university?", "Chancellor Name"],
+         "responses": ["His Excellency Mr. Abdul Hamid"],
+         "context": [""]
+        },
+{"tag": "vc nstu",
+         "patterns": ["Who is the Vice-Chancellor of this university?", "Vice-Chancellor Name"],
+         "responses": ["Professor Dr. Md. Didar-ul-Alam"],
+         "context": [""]
+        },
+{"tag": "pro vc",
+         "patterns": ["Who is the Pro-Vice Chancellor of this university?", "Pro-Vice Chancellor Name"],
+         "responses": ["Professor Dr. Mohammad Abdul Baki"],
+         "context": [""]
+        },
+{"tag": "CSTE_Location",
+         "patterns": ["Direction of Computer Science & Telecommunication Engineering Department", "In which academic Building CSTE department is located?", "CSTE department ta kon Bhobon e ache?", "CSTE department er actual direction ta kondike?"],
+         "responses": ["CSTE Department is located in Academic building 1."],
+         "context": [""]
+        },
+{"tag": "ICE_Location",
+         "patterns": ["Direction of Information of Communication Engineering(ICE)", "In which academic Building ICE department is located?", "ICE ta kon Bhobon e ache?", "ICE er actual direction ta kondike?"],
+         "responses": ["ICE Department is located in Academic building 2."],
+         "context": [""]
+        },
+{"tag": "Education Department",
+         "patterns": ["Direction of Education Department", "In which academic Building Education department is located?", "Education Department ta kon Bhobon e ache?", "Education Department er actual direction ta kondike?"],
+         "responses": ["Education Department is located in 1st floor of Libraray Building"],
+         "context": [""]
+        },
+
+{"tag": "LAW Department",
+         "patterns": ["Direction of LAW Department", "In which academic Building LAW Department is located?", "LAW Department ta kon Bhobon e ache?", "LAW Department er actual direction ta kondike?"],
+         "responses": ["LAW Department is located in Auditorium building"],
+         "context": [""]
+        },
+
+{"tag": "Applied Mathematics Department",
+         "patterns": ["Direction of Applied Mathematics Department", "In which academic Building Applied Mathematics Department is located?", "Applied Mathematics Department ta kon Bhobon e ache?", "Applied Mathematics Department er actual direction ta kondike?"],
+         "responses": ["Applied Mathematics Department is located in Academic building 2."],
+         "context": [""]
+        },
+
+{"tag": "BLWS",
+         "patterns": ["Direction of Bangladesh and Muktijuddo Studies", "In which academic Building BLWS is located?", "BLWS ta kon Bhobon e ache?", "BLWS er actual direction ta kondike?"],
+         "responses": ["Bangladesh and Muktijuddo Studie Department is located in Auditorium building"],
+         "context": [""]
+        },
+
+{"tag": "Statistics Department",
+         "patterns": ["Direction of Statistics Department", "In which academic Building Statistics Department is located?", "Statistics Department ta kon Bhobon e ache?", "Statistics Department er actual direction ta kondike?"],
+         "responses": ["Statistics Department is located in Auditorium building"],
+         "context": [""]
+        },
+
+{"tag": "EEE Department",
+         "patterns": ["Direction of EEE Department", "In which academic Building EEE Department is located?", "EEE Department ta kon Bhobon e ache?", "EEE Department er actual direction ta kondike?"],
+         "responses": ["EEE Department is located in Administrative building"],
+         "context": [""]
+        },
+
+{"tag": "BGE",
+         "patterns": ["Direction of Biotechnology and Genetic Engineering Department", "In which academic Building BGE is located?", "BGE ta kon Bhobon e ache?", "BGE er actual direction ta kondike?"],
+         "responses": ["Biotechnology and Genetic Engineering Department Department is located in Academic building 2."],
+         "context": [""]
+        },
+
+{"tag": "FTNS",
+         "patterns": ["Direction of Food Technology and Nutrition Science", "In which academic Building FTNS is located?", "FTNS ta kon Bhobon e ache?", "FTNS er actual direction ta kondike?"],
+         "responses": ["Food Technology and Nutrition Science Department is located in Academic building 2."],
+         "context": [""]
+        },
+
+{"tag": "Pharmacy Department",
+         "patterns": ["Direction of Pharmacy Department", "In which academic Building Pharmacy Department is located?", "Pharmacy Department ta kon Bhobon e ache?", "Pharmacy Department er actual direction ta kondike?"],
+         "responses": ["Pharmacy Department is located in Academic building 1."],
+         "context": [""]
+        },
+
+{"tag": "MIS Department",
+         "patterns": ["Direction of Management Information System", "In which academic Building MIS Department is located?", "MIS Department ta kon Bhobon e ache?", "MIS Department er actual direction ta kondike?"],
+         "responses": ["Management Information System Department is located in Auditorium building"],
+         "context": [""]
+        },
+
+{"tag": "DBA",
+         "patterns": ["Direction of Department of Buisness Administration", "In which academic Building DBA is located?", "DBA ta kon Bhobon e ache?", "DBA er actual direction ta kondike?"],
+         "responses": ["Department of Buisness Administration is located in Academic building 2."],
+         "context": [""]
+        },
+
+{"tag": "FIMS",
+         "patterns": ["Direction of Fisheries and Marine Science Department", "In which academic Building FIMS is located?", "FIMS ta kon Bhobon e ache?", "FIMS er actual direction ta kondike?"],
+         "responses": ["Fisheries and Marine Science Department is located in Academic building 1."],
+         "context": [""]
+        },
+
+{"tag": "Department of Bangla",
+         "patterns": ["Direction of Department of Bangla", "In which academic Building Department of Bangla is located?", "Department of Bangla ta kon Bhobon e ache?", "Department of Bangla er actual direction ta kondike?"],
+         "responses": [" Bangla Department is located in Administrative building"],
+         "context": [""]
         }
-   ]
+         ]
 }
