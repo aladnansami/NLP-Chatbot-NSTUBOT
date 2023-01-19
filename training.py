@@ -1,10 +1,7 @@
 import nltk
 from nltk.stem import WordNetLemmatizer
-
-
 lemmatizer = WordNetLemmatizer()
 import json
-# import bnlp
 import pickle
 import numpy as np
 from keras.models import Sequential

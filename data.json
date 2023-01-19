@@ -61,11 +61,6 @@
          "responses": ["(Office Hour: 9:00 AM to 5:00 PM, Days: Sunday to Thursday, Closed weekend day: Friday and Saturday)"],
          "context": [""]
         },
-{"tag": "IIT_Location",
-         "patterns": ["Direction of IIT", "where is IIT Building?", "IIT ta kon Bhobon e ache?", "IIT er actual direction ta kondike?"],
-         "responses": ["IIT is located in 2nd Floor of Library Building."],
-         "context": [""]
-        },
 {"tag": "NSTU_MOSQUE",
          "patterns": ["Where is the NSTU Central Mosque located?", "Please tell me the Location of Central Mosque of NSTU", "Nstu er central mosque ta kondike?", "Nstu er mosjid ta kon jaigai ache?"],
          "responses": ["The central mosque of  NSTU is located on the way to the library building and front of the MEdical Center Nstu. See more details in map: https://vymaps.com/BD/Nstu-Central-Mosque-O8343189241/"],
@@ -228,6 +223,92 @@
          "patterns": ["Direction of Department of Bangla", "In which academic Building Department of Bangla is located?", "Department of Bangla ta kon Bhobon e ache?", "Department of Bangla er actual direction ta kondike?"],
          "responses": [" Bangla Department is located in Administrative building"],
          "context": [""]
+        },
+
+{"tag": "",
+         "patterns": [""],
+         "responses": ["Please try to valid question"],
+         "context": [""]
+        },
+
+{"tag": "GST",
+         "patterns": ["what is gst exam?","GST"],
+         "responses": ["In the GST admission system, all the students from Science, Commerce, and Humanities will be able to sit for the GST Admission test. The GST admission will be held on the same day all around the country. The syllabus will be based on the HSC syllabus. Soon the GST Admission Circular 2022 will be published."],
+         "context": [""]
+        },
+{"tag": "Department of English",
+         "patterns": ["Direction of Department of English", "In which academic Building Department of English is located?", "Department of English ta kon Bhobon e ache?", "Department of English er actual direction ta kondike?","English Department"],
+         "responses": ["English Department is located in Academic Building 2."],
+         "context": [""]
+        },
+{"tag": "Department of Sociology",
+         "patterns": ["Direction of Department of Sociology", "In which academic Building Department of Sociology is located?", "Department of Sociology ta kon Bhobon e ache?", "Department of Sociology er actual direction ta kondike?","Sociology Department"],
+         "responses": ["Sociology Department is located in Auditorium Building."],
+         "context": [""]
+        },
+{"tag": "BotTola NSTU",
+         "patterns": ["BotTola Nstu","Where is Nstu BotTola located?","NSTU BotTOLA ta kondike?"],
+         "responses": ["BotTola NSTU is located besides Basha Shahid Abdus Salam Hall."],
+         "context": [""]
+        },
+{"tag": "NSTU BANK",
+         "patterns": ["Where is NSTU Bank is Located?", "Nstu Bank", "Which Bank's branch is in NSTU?"],
+         "responses": ["NSTU have Agrani Bank Branch which is located in the Ground Floor of Administrative Building. For more details contact in this number: +8801843444465."],
+         "context": [""]
+        },
+{"tag": "BMB",
+         "patterns": ["Direction of Department of Biochemistry of Molecular Biology", "In which academic Building Department of Biochemistry of Molecular Biology?", "Department of Biochemistry of Molecular Biology ta kon Bhobon e ache?", "BMB er actual direction ta kondike?","Biochemistry of Molecular Biology"],
+         "responses": ["Biochemistry of Molecular Biology Department is allocated in Auditorium Building."],
+         "context": [""]
+        },
+{"tag": "Zoology",
+         "patterns": ["Direction of Department of Zoology", "In which academic Building Department of Zoology is located?", "Department of Zoology ta kon Bhobon e ache?", "Department of Zoology er actual direction ta kondike?","Zoology Department"],
+         "responses": ["Zoology Department is allocated in Auditorium Building."],
+         "context": [""]
+        },
+{"tag": "THM",
+         "patterns": ["Direction of Department of Tourism and Hospitality Management", "In which academic Building Department of Tourism and Hospitality Management is located?", "Department of THM ta kon Bhobon e ache?", "Department of Tourism and Hospitality Management er actual direction ta kondike?","Tourism and Hospitality Management Department"],
+         "responses": ["Tourism and Hospitality Management is allocated in Auditorium Building."],
+         "context": [""]
+        },
+{"tag": "GST_otp_code",
+         "patterns": ["I cannot find Verification code","Didn't get Verification code","I didn't receive the OTP","OTP ashtese nah phone e, log in korte partesi nah","OTP ASCHENA AMAR NUMBER A","Otp ase na keno","I didn't find otp","Didn't receive any otp for log in in my phone.","Opt pacchi na","mobile verification code asteche na","I cannot collect my OTP.The SMS doesnot come.","Otp code ashtece na","Ami otp paitechi na","Amake boltece OTP patano hoyece kintu aseni","I don't get any verification code in my phone number.","Didn't receive otp","OTP code","Verify code ashe ni","Didn't get any verification code","I couldn't get any verification code.","OTP not sent","Plz send otp and help to log in website","Not getting OTP","After Logging in, I didn't get any OTP to confirm my mobile number. But the website is telling me that they has sent an OTP to verify it.","Not getting OTP on mobile phone but Mobile number is valid","I didn't get a message with verification code.","Otp na aashle log in kibhabe korbo ami","OTP SMS paini","I can not get my otp","Couldn't get otp"],
+         "responses": ["Please try again later or contact with GST helpline."],
+         "context": [""]
+        },
+{"tag": "GST_SERVER",
+         "patterns": ["Why does the server not load?","Why server is down?","server down dekhacche kno?","server load hocche na kno?","Server load nicche na kno?","why server is so slow?","admission server is down why?","server onkkhon off kno?","Why server get error?","server error dekhai kno?"],
+         "responses": ["please wait and keep an eye on the admission page,it will be fixed shortly."],
+         "context": [""]
+        },
+{"tag": "GST_Payment",
+         "patterns": ["Ami nagad a payment korsi. Massage o asce.. payment successful bole.kinto profile a unpaid dekhai","Why webpage show unpaid in paid status?","taka joma diyechi kintu payment ekhono unpaid kno?"," payment option shows unpaid but i pay the bill.","i have transaction id of payment but in my profile it shows unpaid.","payment invalid" ],
+         "responses": ["please wait and check it later.It will be updated soon, if your payment is successful."],
+         "context": [""]
+        },
+{"tag": "Agriculture",
+         "patterns": ["Direction of Department of Agriculture", "In which academic Building Department of Agriculture is located?", "Department of Agriculture ta kon Bhobon e ache?", "Department of Agriculture er actual direction ta kondike?","Agriculture Department"],
+         "responses": ["Agriculture Department is located in Academic Building 2."],
+         "context": [""]
+        },
+{"tag": "Economics",
+         "patterns": ["Direction of Department of Economics", "In which academic Building Department of Economics is located?", "Department of Economics ta kon Bhobon e ache?", "Department of Economics er actual direction ta kondike?","Economics Department"],
+         "responses": ["Economics Department is located in Academic Building 2."],
+         "context": [""]
+        },
+{"tag": "ISLM",
+         "patterns": ["Direction of Department of Information Science and Library Management", "In which academic Building Department of ISLM is located?", "ISLM ta kon Bhobon e ache?", "ISLM er actual direction ta kondike?","ISLM Department"],
+         "responses": ["Information Science and Library Management Department is located in Library Building."],
+         "context": [""]
+        },
+{"tag": "Education Administration",
+         "patterns": ["Direction of Department of Education Administration ", "In which academic Building Department of Education Administration is located?", "Education Administration ta kon Bhobon e ache?", "Education Administration er actual direction ta kondike?","Education Administration Department"],
+         "responses": ["Education Administration Department is located in Library Building."],
+         "context": [""]
+        },
+  {"tag": "IIT",
+         "patterns": ["Direction of IIT", "where is IIT Building?", "IIT ta kon Bhobon e ache?", "IIT er actual direction ta kondike?"],
+         "responses": ["IIT means Institute of Information Technology.IIT is located in 2nd Floor of Library Building.There are total 13 teachers in IIT.IIT have total four batch with total 120 students.Here have two lab and one classroom.IIT Vision:To create competent and skilled intellectual IT professionals specifically for planning strategically, implementing and managing IT systems along with empowerment, enhancement and engagement of the academic, support and research activities.Mission of IIT:Institute of Information Technology (IIT) is formed to bring forth competent IT Professionals in Bangladesh with a strong understanding of information technology bodies of knowledge and theories, who can apply sound technological principles and methods to the cost-effective creation, development, operation, and maintenance of high-quality information system and are prepared for lifelong learning.The specific mission of this institute is:M1. To uplift the rural communities of Bangladesh, specifically Noakhali region through advanced quality education in Information Technology M2. To disseminate IT knowledge to the university community, professional societies, local communities, the state, and the nation through advanced research and development M3. To provide students with the tools to become productive, participating global citizens and life-long learners M4. To maintain relationship with the industry through effective and dynamic industry- academia collaboration M5. To provide an atmosphere for students and faculty for continuous learning to investigate, apply and transfer knowledgeM6. To provide diversity and professionalism in IT field along with the entrepreneurial, interdisciplinary, service oriented environment and curriculum"],
+         "context": [""]
         }
-         ]
-}
+         ]}
