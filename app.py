@@ -7,8 +7,6 @@ import pymongo
 import datetime
 # import speech_recognition as sr
 import pyttsx3
-
-
 import nltk
 nltk.download('popular')
 from nltk.stem import WordNetLemmatizer
@@ -140,7 +138,15 @@ def get_bot_response():
     # client.close()
     # engine.runAndWait()
     # return str(botResponse)
-
+# Trying
+    botResponse = chat_response(userText)
+    engine = pyttsx3.init()
+    rate = engine.getProperty("rate")
+    engine.setProperty(rate, 80)
+    engine.say(botResponse)
+    client.close()
+    engine.runAndWait()
+    return str(botResponse)
 
 ##########################---------------- AFTER CLICKING MIC : VOICE  -------------------##############################
 #

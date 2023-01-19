@@ -227,7 +227,7 @@
 
 {"tag": "",
          "patterns": [""],
-         "responses": ["Please try to valid question"],
+         "responses": ["This chatbot contains NSTU based information queries,please try do to valid question"],
          "context": [""]
         },
 
@@ -246,7 +246,7 @@
          "responses": ["Sociology Department is located in Auditorium Building."],
          "context": [""]
         },
-{"tag": "BotTola NSTU",
+{"tag": "BotTola",
          "patterns": ["BotTola Nstu","Where is Nstu BotTola located?","NSTU BotTOLA ta kondike?"],
          "responses": ["BotTola NSTU is located besides Basha Shahid Abdus Salam Hall."],
          "context": [""]
