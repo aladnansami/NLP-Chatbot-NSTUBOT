@@ -1,22 +1,22 @@
 {"intents": [
         {"tag": "greeting",
          "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
-         "responses": ["Hello, thanks for asking", "Good to see you again", "Hi there, how can I help?"],
+         "responses": ["Hello, thanks for asking, How are you","Hi there, how can I help?"],
          "context": [""]
         },
         {"tag": "goodbye",
          "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
-         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+         "responses": ["See you! soon ", "Have a nice day", "Bye! Come back again soon."],
          "context": [""]
         },
         {"tag": "thanks",
          "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
-         "responses": ["Happy to help!", "Any time!", "My pleasure"],
+         "responses": ["Happy to help!", "My pleasure"],
          "context": [""]
         },
         {"tag": "noanswer",
          "patterns": [],
-         "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+         "responses": ["Sorry, can't understand you", "Please give me more info"],
          "context": [""]
         },
      {"tag": "OTP related problem",
@@ -41,12 +41,12 @@
          "context": [""]
         },
 
-{"tag": "IIT_Lab_facilities",
+{"tag": "IIT Lab facilities",
          "patterns": ["how many Labs in this department?", "Number of Labs", "ekhane koiti Lab ache?","Total lab Number", "Total Lab Sonkha"],
          "responses": ["There are 2 Labs and 1 classroom"],
          "context": [""]
         },
-{"tag": "IIT_Teachers",
+{"tag": "IIT Teachers",
          "patterns": ["How many teachers are here?", "Total Teachers number of IIT", "Teachers Facilities of IIT", "IIT te Teachers er sonkha koto?", "IIT te kotojon sir-mam achen?"],
          "responses": ["Total 13 teachers are in IIT.See more in details: https://www.nstu.edu.bd/IIT.html"],
          "context": [""]
@@ -61,22 +61,22 @@
          "responses": ["(Office Hour: 9:00 AM to 5:00 PM, Days: Sunday to Thursday, Closed weekend day: Friday and Saturday)"],
          "context": [""]
         },
-{"tag": "NSTU_MOSQUE",
+{"tag": "NSTU MOSQUE",
          "patterns": ["Where is the NSTU Central Mosque located?", "Please tell me the Location of Central Mosque of NSTU", "Nstu er central mosque ta kondike?", "Nstu er mosjid ta kon jaigai ache?"],
          "responses": ["The central mosque of  NSTU is located on the way to the library building and front of the MEdical Center Nstu. See more details in map: https://vymaps.com/BD/Nstu-Central-Mosque-O8343189241/"],
          "context": [""]
         },
-{"tag": "NSTU_Temple",
+{"tag": "NSTU Temple",
          "patterns": ["Where is the NSTU Central Temple located?", "Please tell me the Location of the Central Temple of NSTU", "Nstu er central temple ta kondike?", "Nstu er temple ta kon jaigai ache?"],
          "responses": ["The central temple of  NSTU is located on the way to the Bibi Khadija Hall or Monoshoroni Uddyan. See more details in map:https://www.google.com/maps/place/NSTU+Central+Temple/@22.7946896,91.0980933,17z/data=!3m1!4b1!4m5!3m4!1s0x3754afd4593f5885:0x159d54d3b3a13a9e!8m2!3d22.7946958!4d91.1002815"],
          "context": [""]
         },
-{"tag": "NSTU_Hall",
+{"tag": "NSTU Hall",
          "patterns": ["How many halls are in Nstu?","how many boys halls in nstu?","how many girls halls in nstu?","total halls number in NSTU","nstu te total koita hall ache?", "cheleder jonno koita hall ache nstu te?", "meyeder jonno koita hall ache nstu te?", "when a student get hall seat as a fresher?", "hall e seat kokhon pabo?", "Hall e seat pete koto din somoi lagbe?"],
          "responses": ["NSTU have total 5 halls. Two boys hall, these are: 1.Basha Shahid Abdus Salam Hall, 2.Bir Muktijuddha Abdul Malek Ukil Hall. Three girls hall, these are: 1.Hazrat Bibi Khadiza Hall, 2.Jatir Pita Bangabandhu Sheikh Mujibur Rahman Hall, 3.Bangamata Sheikh Fazilatunnessa Mujib Hall","Applications for vacant seats will be accepted from the hall subject to availability of seats."],
          "context": [""]
         },
-{"tag": "Hall_Provost",
+{"tag": "Hall Provost",
          "patterns": ["hall provost name", "All hall Provost Name", " hall provost er namgulo ki?", "Hall provost der nam gulo jante chai"],
          "responses": ["1.Basha Shahid Abdus Salam Hall(Dr. Md Anisuzzaman), 2. 2.Bir Muktijuddha Abdul Malek Ukil Hall(Dr. Mehede Hassan Rubel), 3.Hazrat Bibi Khadiza Hall(Dr. Md. Rafiqul Islam), 4.Jatir Pita Bangabandhu Sheikh Mujibur Rahman Hall(Md.Majnur Rahman), 5.Bangamata Sheikh Fazilatunnessa Mujib Hall(Dr. Mohammad. Mohinuzzaman)"],
          "context": [""]
@@ -142,7 +142,7 @@
          "responses": ["CSTE Department is located in Academic building 1."],
          "context": [""]
         },
-{"tag": "ICE_Location",
+{"tag": "ICE Location",
          "patterns": ["Direction of Information of Communication Engineering(ICE)", "In which academic Building ICE department is located?", "ICE ta kon Bhobon e ache?", "ICE er actual direction ta kondike?"],
          "responses": ["ICE Department is located in Academic building 2."],
          "context": [""]
@@ -227,7 +227,7 @@
 
 {"tag": "",
          "patterns": [""],
-         "responses": ["This chatbot contains NSTU based information queries,please try do to valid question"],
+         "responses": ["This chatbot contains NSTU based information queries,please try do to valid question,Thank you"],
          "context": [""]
         },
 
@@ -271,17 +271,17 @@
          "responses": ["Tourism and Hospitality Management is allocated in Auditorium Building."],
          "context": [""]
         },
-{"tag": "GST_otp_code",
+{"tag": "GST otp code",
          "patterns": ["I cannot find Verification code","Didn't get Verification code","I didn't receive the OTP","OTP ashtese nah phone e, log in korte partesi nah","OTP ASCHENA AMAR NUMBER A","Otp ase na keno","I didn't find otp","Didn't receive any otp for log in in my phone.","Opt pacchi na","mobile verification code asteche na","I cannot collect my OTP.The SMS doesnot come.","Otp code ashtece na","Ami otp paitechi na","Amake boltece OTP patano hoyece kintu aseni","I don't get any verification code in my phone number.","Didn't receive otp","OTP code","Verify code ashe ni","Didn't get any verification code","I couldn't get any verification code.","OTP not sent","Plz send otp and help to log in website","Not getting OTP","After Logging in, I didn't get any OTP to confirm my mobile number. But the website is telling me that they has sent an OTP to verify it.","Not getting OTP on mobile phone but Mobile number is valid","I didn't get a message with verification code.","Otp na aashle log in kibhabe korbo ami","OTP SMS paini","I can not get my otp","Couldn't get otp"],
          "responses": ["Please try again later or contact with GST helpline."],
          "context": [""]
         },
-{"tag": "GST_SERVER",
+{"tag": "GST SERVER",
          "patterns": ["Why does the server not load?","Why server is down?","server down dekhacche kno?","server load hocche na kno?","Server load nicche na kno?","why server is so slow?","admission server is down why?","server onkkhon off kno?","Why server get error?","server error dekhai kno?"],
          "responses": ["please wait and keep an eye on the admission page,it will be fixed shortly."],
          "context": [""]
         },
-{"tag": "GST_Payment",
+{"tag": "GST Payment",
          "patterns": ["Ami nagad a payment korsi. Massage o asce.. payment successful bole.kinto profile a unpaid dekhai","Why webpage show unpaid in paid status?","taka joma diyechi kintu payment ekhono unpaid kno?"," payment option shows unpaid but i pay the bill.","i have transaction id of payment but in my profile it shows unpaid.","payment invalid" ],
          "responses": ["please wait and check it later.It will be updated soon, if your payment is successful."],
          "context": [""]
@@ -310,5 +310,12 @@
          "patterns": ["Direction of IIT", "where is IIT Building?", "IIT ta kon Bhobon e ache?", "IIT er actual direction ta kondike?"],
          "responses": ["IIT means Institute of Information Technology.IIT is located in 2nd Floor of Library Building.There are total 13 teachers in IIT.IIT have total four batch with total 120 students.Here have two lab and one classroom.IIT Vision:To create competent and skilled intellectual IT professionals specifically for planning strategically, implementing and managing IT systems along with empowerment, enhancement and engagement of the academic, support and research activities.Mission of IIT:Institute of Information Technology (IIT) is formed to bring forth competent IT Professionals in Bangladesh with a strong understanding of information technology bodies of knowledge and theories, who can apply sound technological principles and methods to the cost-effective creation, development, operation, and maintenance of high-quality information system and are prepared for lifelong learning.The specific mission of this institute is:M1. To uplift the rural communities of Bangladesh, specifically Noakhali region through advanced quality education in Information Technology M2. To disseminate IT knowledge to the university community, professional societies, local communities, the state, and the nation through advanced research and development M3. To provide students with the tools to become productive, participating global citizens and life-long learners M4. To maintain relationship with the industry through effective and dynamic industry- academia collaboration M5. To provide an atmosphere for students and faculty for continuous learning to investigate, apply and transfer knowledgeM6. To provide diversity and professionalism in IT field along with the entrepreneurial, interdisciplinary, service oriented environment and curriculum"],
          "context": [""]
+        },
+
+   {"tag": "NSTU",
+         "patterns": ["nstu","NSTU"],
+         "responses": ["Noakhali Science and Technology University(known as NSTU) is a public university in the coastal terrain Noakhali of Bangladesh. It is the 27th public university (out of 32) and fifth science and technology university in Bangladesh. Its foundation stone was laid on 11 October 2003 and academic activities started on 22 June 2006.Noakhali University of Science and Technology stands on Sonapur, 8 kilometers southwest of Maijdee. It has a land area of 101 acres (0.41 km2) covering 93 Salla and 95 Noakhali Mouza. The goal of the university is to make it is one of the top tier universities in Bangladesh. Presently the campus consists of one 5 storied administrative building, three academic buildings (academic 1 is 5 storied and academic 2 and 3 are 10 storied), three male student halls, two female student halls, a 5 storied auditorium and TSC building, one 4 storied library building. The well furnished central library equipped with online library facilities has 10,000 printed books and 1500 printed journals apart from numerous e-books and e-journals. It has also four teacher's and officer's dormitories, one staff dormitories, vice chancellor's building and a mosque as well as a guest house. The construction of NSTU medical centre is also completed. There are two sport field and two big ponds in the campus area. It has a canteen for students called NSTU cafeteria. It has also a martyr monument like a fountain pen and a sculpture of liberation war.In terms of natural beauty, Nastu is nothing less. Here is Maynardeep for the habitat of guest birds.A park called Varsity park is also decorated for students leisure time with different kind of trees, benches and an octagonal cafeteria."],
+         "context": [""]
         }
+
          ]}
