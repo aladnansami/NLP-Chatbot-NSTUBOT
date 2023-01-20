@@ -11,22 +11,14 @@
   <!--Fontawesome CSS-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
-  <!--MUI CSS-->
-  <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css" />
-
   <!--Custom CSS-->
-  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='common.css') }}">
-  <style>
-    div.col-9{
-      margin: 20px auto;
-      
-    }
+  <link rel= "stylesheet" type= "text/css" href="{{ url_for('static',filename='common.css') }}">
 
-  </style>
-  <title>Registration</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='index.css') }}">
+
+  <title>Admin Panel</title>
 </head>
 <body>
-
 
   <!-- =================== HEADER =================== -->
   <header class=" my-3">
@@ -79,49 +71,72 @@
     </div>
 
     <!-- =================== DISPLAYING LOGOUT LINK BASED ON USER LOGGED IN OR NOT =================== -->
-    {% with m=session.get("user_id")  %}
+    {% with m=session.get("admin_id")  %}
       {% if m!=None %}
-        <a href="./logout" class="nav-link text-white">Log Out</a>
+        <a href="./admin_logout" class="nav-link text-white">Log Out</a>
       {% endif %}
-    {% endwith %}
+    {% endwith %} 
 
-  </nav>
+  </nav> 
 
-  <div class="container">
-    <div class="row my-3">
-      <!-- =================== USER REGISTRATION IMAGE =================== -->
-      <div class="d-none col-12 d-lg-block col-lg-7">
-        <img src="{{ url_for('static',filename='images/./registration.jpg') }}" width="500" alt="">
-      </div>
-      <!-- =================== USER REGISTRATION FORM =================== -->
-      <div class="col-12 col-sm-9 mx-sm-auto mx-0 col-lg-5">
-        <form  method="post" action="/register_validation" class="border rounded px-3 pt-3">
+  <div class="container-fluid">
+    <h2 class="text-center py-2 my-0">Admin Panel</h2>
+    <div class="row py-3">
+      <div class="col-4" id="edit_feedback_box" style="display: none;">
+        <form action="/add_query" id="" class="border p-3" method="POST">
+          <input type="hidden" name="eidtable_feed_back_id">
           <div class="form-group">
-            <label for="fname"><i class="fa fa-user"></i> First Name</label>
-            <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter First Name">
+            <label for="">Tag</label>
+            <input type="text" class="form-control" name="tag" placeholder="">
           </div>
           <div class="form-group">
-            <label for="lname"><i class="fa fa-user"></i> Last Name</label>
-            <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Last Name">
+            <label for="">Patterns</label>
+            <input type="text" class="form-control" name="patterns" placeholder="">
           </div>
           <div class="form-group">
-            <label for="email"> <i class="fa fa-envelope"></i> Email address</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
-            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <label for="">Responses</label>
+            <input type="text" class="form-control" name="responses" placeholder="">
           </div>
           <div class="form-group">
-            <label for="pwd"><i class="fa fa-unlock-alt"></i> Password</label>
-            <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter a Strong Password">
-            <small class="form-text text-muted">Strong password always perform better for security issue</small>
+            <label for="">Context</label>
+            <input type="text" class="form-control" name="context" placeholder="">
           </div>
-          <div class="form-group">
-            <input type="submit" class="btn btn-outline-info btn-block" value="Submit">
-          </div>
-          <p>Already Have an Account ? <a href="./login">Log In</a></p>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+      </div>
+      <div class="col-8 mx-auto">
+        <div class="table-responsive feed_back_container">
+          <table class="table">
+            <thead>
+                <th scope="col">User Text</th>
+                <th scope="col">Chatbot Response</th>
+                <th scope="col">Feedback</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in feedback_data %}
+              <tr>
+                <td>{{ item[2] }}</td>
+                <td>{{ item[3] }}</td>
+                <td>{{ item[1] }}</td>
+                <td class="d-flex">
+                  <button type="submit" class="edit_btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                  <form action="/delete_feedback" method="post">
+                    <input type="hidden" name="feed_back_id" value="{{ item[0] }}">
+                    <button type="submit" class="delete_btn"><i class="fa-sharp fa-solid fa-trash"></i></button>
+                  </form>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
+
+
 
   <!-- =================== FOOTER =================== -->
   <footer>
@@ -132,5 +147,27 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+  <script>
+    const edit_btn=document.querySelectorAll(".edit_btn");
+    edit_btn.forEach((item)=>{
+      item.addEventListener("click",(e)=>{
+        const target_element=e.target.parentElement.parentElement.parentElement;
+        const patterns = target_element.children[0].textContent
+        const responses = target_element.children[2].textContent
+        const feed_back_id = target_element.children[3].children[1].children[0].value
+        
+        const editable_patterns=document.getElementsByName("patterns")[0]
+        const editable_responses=document.getElementsByName("responses")[0]
+        const eidtable_feed_back_id=document.getElementsByName("eidtable_feed_back_id")[0]
+
+        edit_feedback_box.style.display='block'
+
+        editable_patterns.value=patterns
+        editable_responses.value=responses
+        eidtable_feed_back_id.value=feed_back_id 
+      })
+    })
+    
+  </script>
 </body>
 </html>

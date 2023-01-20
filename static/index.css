@@ -403,6 +403,7 @@ summary:hover {
   padding: 15px;
   border-radius: 15px;
   background: var(--left-msg-bg);
+  position: relative;
 }
 .msg-info {
   display: flex;
@@ -433,7 +434,28 @@ summary:hover {
 .right-msg .msg-img {
   margin: 0 0 0 10px;
 }
-
+.msg-text{
+  max-width: 250px;
+}
+.left-msg .msg-text{
+  padding-bottom: 20px;
+}
+.feed_back_button{
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+.feed_back_button>button{
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.feed_back_button>button:first-child{
+  color: #579ffb;
+}
+.feed_back_button>button:last-child{
+  color: #579ffb;
+}
 .msger-inputarea {
   display: flex;
   padding: 10px;
@@ -478,4 +500,30 @@ summary:hover {
 }
 .fa-microphone{
   padding: 4px;
+}
+
+
+
+
+
+
+
+/*ADMIN PANEL*/
+.edit_btn,.delete_btn{
+  border: none!important;
+  outline: none!important;
+  background: transparent;
+  margin: 0 10px;
+  padding: 10px;
+}
+.edit_btn{
+  color: green;
+}
+.delete_btn{
+  color: red;
+}
+.feed_back_container{
+  overflow-y: scroll;
+  max-height: 400px;
+  margin-bottom: 15px;
 }

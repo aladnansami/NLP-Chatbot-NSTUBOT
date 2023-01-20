@@ -37,6 +37,9 @@ close_chat_box_btn.addEventListener("click",()=>{
   chat_box.style.right="-535px";
 })
 
+
+
+
 /* =================== CHAT BOT RESPONSES =================== */
 // function getBotResponse() {
 //   var userInput = document.getElementById("userInput");

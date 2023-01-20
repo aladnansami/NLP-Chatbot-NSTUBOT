@@ -15,18 +15,22 @@
   <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css" />
 
   <!--Custom CSS-->
-  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='common.css') }}">
+  <link rel= "stylesheet" type= "text/css" href="{{ url_for('static',filename='common.css') }}">
+
   <style>
     div.col-9{
       margin: 20px auto;
       
     }
-
+    @media screen and (min-width:992px) {
+      form{
+        margin-top: 120px;
+      }
+    }
   </style>
-  <title>Registration</title>
+  <title>Admin Log In</title>
 </head>
 <body>
-
 
   <!-- =================== HEADER =================== -->
   <header class=" my-3">
@@ -88,36 +92,25 @@
   </nav>
 
   <div class="container">
-    <div class="row my-3">
-      <!-- =================== USER REGISTRATION IMAGE =================== -->
+    <div class="row">
+      <!-- =================== USER LOGIN IMAGE =================== -->
       <div class="d-none col-12 d-lg-block col-lg-7">
-        <img src="{{ url_for('static',filename='images/./registration.jpg') }}" width="500" alt="">
+        <img src="{{ url_for('static',filename='./images/login.jpg') }}" width="500" alt="">
       </div>
-      <!-- =================== USER REGISTRATION FORM =================== -->
-      <div class="col-12 col-sm-9 mx-sm-auto mx-0 col-lg-5">
-        <form  method="post" action="/register_validation" class="border rounded px-3 pt-3">
+      <!-- =================== USER LOGIN FORM =================== -->
+      <div class="col-9 col-lg-5">
+        <form  action="./login_validation" method="post" class="border rounded px-3 pt-3">
           <div class="form-group">
-            <label for="fname"><i class="fa fa-user"></i> First Name</label>
-            <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter First Name">
-          </div>
-          <div class="form-group">
-            <label for="lname"><i class="fa fa-user"></i> Last Name</label>
-            <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Last Name">
-          </div>
-          <div class="form-group">
-            <label for="email"> <i class="fa fa-envelope"></i> Email address</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
-            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <label for="email"><i class="fa fa-envelope"></i> Email address</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
           </div>
           <div class="form-group">
             <label for="pwd"><i class="fa fa-unlock-alt"></i> Password</label>
-            <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter a Strong Password">
-            <small class="form-text text-muted">Strong password always perform better for security issue</small>
+            <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter Password">
           </div>
           <div class="form-group">
-            <input type="submit" class="btn btn-outline-info btn-block" value="Submit">
+            <input type="submit" class="btn btn-outline-info btn-block" value="Log In">
           </div>
-          <p>Already Have an Account ? <a href="./login">Log In</a></p>
         </form>
       </div>
     </div>

@@ -9,7 +9,7 @@ const bscIT = () =>
     level : "Graduate",
     duration : "4 years",
     el : "",
-    fees: ,
+    fees: null,
     job : ""
     };
 }
@@ -22,7 +22,7 @@ const bscCs = () =>
     level : "Graduate",
     duration : "4 years",
     el : "",
-    fees: ,
+    fees: "",
     job : ""
 };
 }

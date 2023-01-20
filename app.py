@@ -81,7 +81,7 @@ app.secret_key = os.urandom(24)
 
 ###################################------------------MYSQL---------------------########################################
 
-conn = mysql.connector.connect(host="localhost", user="root", password="", database="login_validation")
+conn = mysql.connector.connect(host="localhost", user="root", password="", database="chatbot_application")
 cursor = conn.cursor()
 
 
@@ -112,8 +112,16 @@ def home():
 @app.route("/get")
 def get_bot_response():
 
-    userText = request.args.get('msg')
-    return chatbot_response(userText)
+    # userText = request.args.get('msg')
+    global USER_TEXT,CHATBOT_RESPONSE
+    USER_TEXT = request.args.get('msg')
+    
+    CHATBOT_RESPONSE=chatbot_response(USER_TEXT)
+    cursor.execute("INSERT INTO queries(user_id, user_text, chatbot_response) VALUES (%s,%s,%s)",(session["user_id"],USER_TEXT,CHATBOT_RESPONSE))    
+    conn.commit()
+
+
+    return CHATBOT_RESPONSE
     # client = pymongo.MongoClient(
     # "mongodb + srv: // aladnansami:!87654321Aa@cluster0.d81fvmf.mongodb.net /?retryWrites = true & w = majority"
     # )
@@ -138,15 +146,7 @@ def get_bot_response():
     # client.close()
     # engine.runAndWait()
     # return str(botResponse)
-# Trying
-    botResponse = chat_response(userText)
-    engine = pyttsx3.init()
-    rate = engine.getProperty("rate")
-    engine.setProperty(rate, 80)
-    engine.say(botResponse)
-    client.close()
-    engine.runAndWait()
-    return str(botResponse)
+
 
 ##########################---------------- AFTER CLICKING MIC : VOICE  -------------------##############################
 #
@@ -182,11 +182,17 @@ def get_bot_response():
 
 @app.route('/login_validation', methods=['POST'])
 def login_validation():
+    
+    if 'admin_id' in session:
+        session.pop('admin_id')
+    
     email = request.form.get('email')
     pwd = request.form.get('pwd')
+
     cursor.execute("SELECT * FROM user WHERE email = %s AND pwd = %s ", (email, pwd))
     users = cursor.fetchall()
     if len(users) > 0:
+
         session['user_id'] = users[0][3]
         flash('Logged in Successfully!')
         return redirect('/home')
@@ -215,14 +221,105 @@ def register_validation():
         flash('Password must be at least 5 characters in length')
         return render_template('registration.html')
     else:
+
         cursor.execute("INSERT INTO user (fname,lname,email,pwd) VALUES (%s,%s,%s,%s)", (fname, lname, email, pwd))
 
         conn.commit()
-        conn.close()
+        #conn.close()
         
         # return render_template('index.html')
         flash('Registration Successfully!')
         return redirect('/home')
+
+
+
+################################------------------FEED BACK---------------#################################################
+@app.route('/user_feedback', methods=['POST'])
+def user_feedback():
+    feed_back_type = request.form.get('feed_back_type')
+    feed_back_msg = request.form.get('feed_back_msg')
+
+    cursor.execute("INSERT INTO feed_back(feed_back_msg,feed_back_type,user_text,bot_response) VALUES (%s,%s,%s,%s)",(feed_back_msg,feed_back_type,USER_TEXT,CHATBOT_RESPONSE))
+    
+    conn.commit()
+    #conn.close()
+
+    flash("Feedback Submitted")
+    return redirect('/home')
+
+###########################---------------- RENDERING ADMIN PAGE -------------------#################################
+
+@app.route('/admin')
+def admin():
+    if 'admin_id' in session:
+        cursor.execute("SELECT feed_back_id,feed_back_msg, user_text, bot_response FROM feed_back WHERE feed_back_type=(%s)",("false",))
+        feedback_data = cursor.fetchall()
+        return render_template('admin.html',feedback_data=feedback_data)
+    else:
+        return redirect('/')
+
+################################------------------DELETING FEEDBACK---------------#################################################
+@app.route('/delete_feedback', methods=['POST'])
+def delete_feedback():
+    feed_back_id = request.form.get('feed_back_id')
+
+    cursor.execute("DELETE FROM feed_back WHERE feed_back_id=(%s)",(feed_back_id,))
+    conn.commit()
+
+    flash("Feedback Deleted")
+    return redirect('/admin')
+
+################################------------------ADDING NEW QUERY---------------#################################################
+@app.route('/add_query', methods=['POST'])
+def add_query():
+    tag=request.form.get('tag')
+    patterns=request.form.get('patterns')
+    responses=request.form.get('responses')
+    context=request.form.get('context')
+    feedback_id=request.form.get('eidtable_feed_back_id')
+
+    cursor.execute("INSERT INTO new_query_data(feed_back_id, tag, patterns, responses, context) VALUES (%s,%s,%s,%s,%s)",(feedback_id,tag,patterns,responses,context))
+    cursor.execute("DELETE FROM feed_back WHERE feed_back_id=(%s)",(feedback_id,))
+    
+    conn.commit()
+    
+    flash("Query Added")
+    return redirect('/admin')
+
+###########################---------------- RENDERING ADMIN LOGIN PAGE -------------------#################################
+@app.route('/admin/login')
+def admin_login():
+    return render_template('admin_login.html')
+
+
+################################------------------ADMIN VALIDATION---------------#################################################
+
+@app.route('/admin/login_validation',methods=['POST'])
+def admin_login_validation():
+    
+    if 'user_id' in session:
+        session.pop('user_id')
+    
+    email = request.form.get('email')
+    pwd = request.form.get('pwd')
+
+    cursor.execute("SELECT * FROM admin WHERE email = %s AND pwd = %s ", (email, pwd))
+    users = cursor.fetchall()
+    if len(users) > 0:
+        session['admin_id'] = users[0][0]
+        flash('Logged in Successfully!')
+        return redirect('/admin')
+    else:
+        flash('Entered Details already exists or are  Invalid Password ')
+        return redirect('/')
+
+
+################################------------------ADMIN LOGOUT---------------#################################################
+@app.route('/admin_logout')
+def admin_logout():
+    session.pop('admin_id')
+    return redirect('/admin/login')
+
 
 ################################------------------LOGOUT---------------#################################################
 

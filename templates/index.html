@@ -52,7 +52,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link text-white" href="">Home</a>
+          <a class="nav-link text-white" href="/">Home</a>
         </li>
         <li class="nav-item hover-list-parent">
           <a class="nav-link text-white" href="#">Academic</a>
@@ -236,9 +236,7 @@
               Tell me about some facilities provided by medical center
             </summary>
             <div>
-              The medical center of Noakhali science and technology university (NSTU) offers free experienced general practitioner and emergency medical care services to all members (students, teachers, officers, staff, also family members of the teachers, officers, staff) of the university community.
-              The center provides service usually 8.30 am to 5.00 pm in working days but provide emergency services 24 hours.
-              All members of the university get medicine from the medical center at free of cost .The center also has an ambulance, for 24 hours service.
+              The medical center of Noakhali science and technology university (NSTU) offers free experienced general practitioner and emergency medical care services to all members (students, teachers, officers, staff, also family members of the teachers, officers, staff) of the university community. The center provides service usually 8.30 am to 5.00 pm in working days but provide emergency services 24 hours. All members of the university get medicine from the medical center at free of cost .The center also has an ambulance, for 24 hours service.
             </div>
           </details>
           <details>
@@ -246,8 +244,7 @@
               How many academic buildings are in NSTU?
             </summary>
             <div>
-              There are 2 established Academic Buildings, namely Academic Building-1 and Academic Building-2, in this University.
-              One academic building is now under construction, the most significant academic building in Bangladesh.
+              There are 2 established Academic Buildings, namely Academic Building-1 and Academic Building-2, in this University. One academic building is now under construction, the most significant academic building in Bangladesh.
             </div>
           </details>
           <details>
@@ -370,12 +367,12 @@
         
                 <div class="msg-bubble">
                   <div class="msg-info">
-                    <div class="msg-info-name">NSTUInformationBot</div>
-                    <div class="msg-info-time">12:45</div>
+                    <div class="msg-info-name">Student Information Chatbot</div>
+                    <div class="msg-info-time">12.45</div>
                   </div>
         
                   <div class="msg-text">
-                    Hi, welcome to NSTU information chatbot ! Go ahead and send me a message for knowing . 😄
+                    Hi, welcome to ChatBot! Go ahead and send me a message. 😄
                   </div>
                 </div>
               </div>
@@ -395,6 +392,32 @@
         {% endwith %}
 
 
+  </div>
+
+  <!-- =================== FEEDBACK =================== -->
+  <div class="modal fade" id="feedBackBox" tabindex="-1" role="dialog" aria-labelledby="feedBackLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title mx-auto">Your feedback will help us improve</h4>
+          <button  type="button" class="close close_feedback_box" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/user_feedback" id="feed_back_box" method="POST">
+            <div class="form-group">
+              <input type="text" class="form-control" name="feed_back_msg" placeholder="Enter Your Feedback">
+              <input type="hidden" name="feed_back_type" >
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary close_feedback_box" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- =================== MESSAGE BOT ICON =================== -->
@@ -465,8 +488,69 @@
     // Icons made by Freepik from www.flaticon.com
     const BOT_IMG = "{{ url_for('static',filename='./images/bot.png') }}";
     const PERSON_IMG = "{{ url_for('static',filename='./images/avatar.png') }}";
-    const BOT_NAME = "    ChatBot";
+    const BOT_NAME = "Student Information Chatbot";
     const PERSON_NAME = "You";
+
+    function feed_back(){
+      const like_button = document.getElementById("like_button");
+      const dislike_button = document.getElementById("dislike_button");
+      const feed_back_type = document.getElementsByName("feed_back_type")
+      like_button.addEventListener("click",()=>{
+        feed_back_type[0].value=true
+        console.log(feed_back_type[0].value)
+      })
+      dislike_button.addEventListener("click",()=>{
+        feed_back_type[0].value=false
+        console.log(feed_back_type[0].value)
+
+      })
+    }
+    
+
+    function appendBotMessage(name, img, side, text) {
+      //   Simple solution for small apps
+      const msgHTML = `
+        <div class="msg ${side}-msg">
+          <div class="msg-img" style="background-image: url(${img})"></div>
+
+          <div class="msg-bubble">
+            <div class="msg-info">
+              <div class="msg-info-name">${name}</div>
+              <div class="msg-info-time">${formatDate(new Date())}</div>
+            </div>
+
+            <div class="msg-text">${text}</div>
+            <div class="feed_back_button">
+                <button type="submit" id="like_button"><i class="fa-solid fa-thumbs-up" data-toggle="modal" data-target="#feedBackBox"></i></button>
+                <button type="submit" id="dislike_button"><i class="fa-solid fa-thumbs-down" data-toggle="modal" data-target="#feedBackBox"></i></button>
+            </div>
+
+          </div>
+        </div>`;
+      msgerChat.insertAdjacentHTML("beforeend", msgHTML);
+      feed_back();
+      msgerChat.scrollTop += 500;
+    }
+
+    function appendUserMessage(name, img, side, text) {
+      //   Simple solution for small apps
+      const msgHTML = `
+        <div class="msg ${side}-msg">
+          <div class="msg-img" style="background-image: url(${img})"></div>
+
+          <div class="msg-bubble">
+            <div class="msg-info">
+              <div class="msg-info-name">${name}</div>
+              <div class="msg-info-time">${formatDate(new Date())}</div>
+            </div>
+
+            <div class="msg-text">${text}</div>
+          </div>
+        </div>`;
+
+      msgerChat.insertAdjacentHTML("beforeend", msgHTML);
+      msgerChat.scrollTop += 500;
+    }
 
     msgerForm.addEventListener("submit", event => {
       event.preventDefault();
@@ -474,44 +558,36 @@
       const msgText = msgerInput.value;
       if (!msgText) return;
 
-      appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
+      appendUserMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
       msgerInput.value = "";
       botResponse(msgText);
     });
-
-    function appendMessage(name, img, side, text) {
-      //   Simple solution for small apps
-      const msgHTML = `
-<div class="msg ${side}-msg">
-  <div class="msg-img" style="background-image: url(${img})"></div>
-
-  <div class="msg-bubble">
-    <div class="msg-info">
-      <div class="msg-info-name">${name}</div>
-      <div class="msg-info-time">${formatDate(new Date())}</div>
-    </div>
-
-    <div class="msg-text">${text}</div>
-  </div>
-</div>
-`;
-
-      msgerChat.insertAdjacentHTML("beforeend", msgHTML);
-      msgerChat.scrollTop += 500;
-    }
 
     function botResponse(rawText) {
 
       // Bot Response
       $.get("/get", { msg: rawText }).done(function (data) {
-        console.log(rawText);
-        console.log(data);
+        //console.log(rawText);
+        //console.log(data);
         const msgText = data;
-        appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+        appendBotMessage(BOT_NAME, BOT_IMG, "left", msgText);
 
       });
 
     }
+
+    const feed_back_box=document.getElementById("feed_back_box");
+    feed_back_box.addEventListener("submit",(e)=>{
+      e.preventDefault();
+      const feed_back_msg=document.getElementsByName("feed_back_msg")[0].value;
+      const feed_back_type=document.getElementsByName("feed_back_type")[0].value;
+      $.post('/user_feedback',{feed_back_msg:feed_back_msg,feed_back_type:feed_back_type})
+      document.getElementsByClassName("close_feedback_box")[0].click()
+    })
+
+
+    
+
 
 
     // Utils
@@ -525,7 +601,8 @@
 
       return `${h.slice(-2)}:${m.slice(-2)}`;
     }
-
+    
+    /* =================== HANDLING USER FEEDBACK TYPE =================== */
 
 
   </script>
