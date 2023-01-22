@@ -31,7 +31,7 @@ const bscCs = () =>
 const ME = () =>
 {
     return Me = {
-    name: "Information comunication Engineering",
+    name: "Information of comunication Engineering",
     level : "Gradute",
     duration : "4 years",
     el : "",
